@@ -13,24 +13,24 @@ export interface IEvent {
     
 }
 
-export class Event implements IEvent{
-    constructor(
-        public name: string,
-        public code: string,
-        public description: string,
-        public date: string,
-        public time: string,
-        public duration: string,
-        public fee: number,
-        public rating: number,
-        public imageUrl: string,
-        public location: object,
-        public capacity: number
-        ){
+// export class Event implements IEvent{
+//     constructor(
+//         public name: string,
+//         public code: string,
+//         public description: string,
+//         public date: string,
+//         public time: string,
+//         public duration: string,
+//         public fee: number,
+//         public rating: number,
+//         public imageUrl: string,
+//         public location: object,
+//         public capacity: number
+//         ){
             
-        }
-        calculateDiscount(percent: number):number {
-            return this.price - (this.price * percent /100);
-        }
+//         }
+//         calculateDiscount(percent: number):number {
+//             return this.price - (this.price * percent /100);
+//         }
     
-}
+// }

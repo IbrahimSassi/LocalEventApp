@@ -1,14 +1,17 @@
-import { Component } from 'angular2/core';
-import { IEvent } from './event';
+import { Component,OnInit } from 'angular2/core';
+import { IEvent } from './events';
+import { EventFilterPipe } from './event-filter.pipe';
+
 @Component({
     selector: 'el-events',
     templateUrl :'app/events/event-list.component.html',
-    styleUrls: ['app/events/event-list.component.css']
+    styleUrls: ['app/events/event-list.component.css'],
+    pipes: [EventFilterPipe]
 })
 
 
 
-export class EventListComponent{
+export class EventListComponent implements OnInit{
     
     eventsImg: boolean= true;
     pageTitle: string = " ** Event List ** ";
@@ -102,6 +105,10 @@ export class EventListComponent{
 
     toogleImages(): void {
         this.eventsImg = !this.eventsImg;
+    }
+    
+    ngOnInit(): void{
+        alert('In OnInit');
     }
 
 
