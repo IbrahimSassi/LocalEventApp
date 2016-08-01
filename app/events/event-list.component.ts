@@ -1,8 +1,9 @@
 import { Component } from 'angular2/core';
-
+import { IEvent } from './event';
 @Component({
     selector: 'el-events',
-    templateUrl :'app/events/event-list.component.html'
+    templateUrl :'app/events/event-list.component.html',
+    styleUrls: ['app/events/event-list.component.css']
 })
 
 
@@ -11,6 +12,11 @@ export class EventListComponent{
     
     eventsImg: boolean= true;
     pageTitle: string = " ** Event List ** ";
+    imageWidth: number = 100;
+    imageMargin: number = 2;
+    searchCriteria: string= 'beach';
+    
+    
     events: any[] = [  {
                 "name": "Event 1",
 				"code": "Evt100",
@@ -91,7 +97,12 @@ export class EventListComponent{
                     },
                 "capacity": 400
                 }
-];
+        ];
+
+
+    toogleImages(): void {
+        this.eventsImg = !this.eventsImg;
+    }
 
 
     

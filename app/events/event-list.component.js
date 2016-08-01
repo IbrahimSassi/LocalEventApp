@@ -22,6 +22,9 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 function EventListComponent() {
                     this.eventsImg = true;
                     this.pageTitle = " ** Event List ** ";
+                    this.imageWidth = 100;
+                    this.imageMargin = 2;
+                    this.searchCriteria = 'beach';
                     this.events = [{
                             "name": "Event 1",
                             "code": "Evt100",
@@ -104,10 +107,14 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                         }
                     ];
                 }
+                EventListComponent.prototype.toogleImages = function () {
+                    this.eventsImg = !this.eventsImg;
+                };
                 EventListComponent = __decorate([
                     core_1.Component({
                         selector: 'el-events',
-                        templateUrl: 'app/events/event-list.component.html'
+                        templateUrl: 'app/events/event-list.component.html',
+                        styleUrls: ['app/events/event-list.component.css']
                     }), 
                     __metadata('design:paramtypes', [])
                 ], EventListComponent);

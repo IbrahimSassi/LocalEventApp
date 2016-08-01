@@ -6,12 +6,14 @@
         <div class="row">
             <div class="col-md-2">Search By :</div>
             <div class="col-md-4">
-                <input type="text" name=""/>
+                <input type="text" name=""
+                [(ngModel)]='searchCriteria'
+                />
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
-                <h3>Search By</h3>
+                <h3>Search By {{searchCriteria}}</h3>
             </div>
         </div>
     
@@ -23,9 +25,9 @@
                 <tr>
                     <th>
                         <button class="btn btn-primary"
-                        
+                        (click)= 'toogleImages()'
                         >
-                            Show Image
+                            {{eventsImg ? 'Hide' : 'Show' }} Image
                         </button>
                     </th>
                     <th> Event </th>
@@ -40,12 +42,17 @@
                 
                 <tr *ngFor="#event of events">
                     <td >
-                        < *ngIf="eventsImg" img width="80" height="70" src="{{ event.imageUrl}}">
+                        <img *ngIf="eventsImg" 
+                        src="{{ event.imageUrl}}"
+                        [title]="event.name"
+                        [style.margin.px]='imageMargin'
+                        [style.width.px]='imageWidth'
+                        >
                     </td>
                     <td>{{ event.name }}</td>
-                    <td>{{ event.code }}</td>
+                    <td>{{ event.code | lowercase }}</td>
                     <td>{{ event.date }}</td>
-                    <td>{{ event.fee }}</td>
+                    <td>{{ event.fee | currency:'USD':true:'1.2-2'}}</td>
                     <td>{{ event.rating }}</td>
                     
                 </tr>
