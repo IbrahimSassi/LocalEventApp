@@ -1,6 +1,6 @@
 <div class="panel panel-primary">
     <div class="panel-heading">
-        Event List
+        {{pageTitle}}
     </div>
     <div class="panel-body">
         <div class="row">
@@ -18,11 +18,13 @@
     </div>
     
     <div class="table-responsive">
-        <table class="table">
+        <table class="table" *ngIf ='events && events.length'>
             <thead>
                 <tr>
                     <th>
-                        <button class="btn btn-primary">
+                        <button class="btn btn-primary"
+                        
+                        >
                             Show Image
                         </button>
                     </th>
@@ -35,6 +37,18 @@
                     </tr>
             </thead>
             <tbody>
+                
+                <tr *ngFor="#event of events">
+                    <td >
+                        < *ngIf="eventsImg" img width="80" height="70" src="{{ event.imageUrl}}">
+                    </td>
+                    <td>{{ event.name }}</td>
+                    <td>{{ event.code }}</td>
+                    <td>{{ event.date }}</td>
+                    <td>{{ event.fee }}</td>
+                    <td>{{ event.rating }}</td>
+                    
+                </tr>
                 
             </tbody>
         </table>
