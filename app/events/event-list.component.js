@@ -1,4 +1,4 @@
-System.register(['angular2/core', './events/event-list.component'], function(exports_1, context_1) {
+System.register(['angular2/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,34 +10,29 @@ System.register(['angular2/core', './events/event-list.component'], function(exp
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, event_list_component_1;
-    var AppComponent;
+    var core_1;
+    var EventListComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (event_list_component_1_1) {
-                event_list_component_1 = event_list_component_1_1;
             }],
         execute: function() {
-            AppComponent = (function () {
-                function AppComponent() {
-                    this.pageTitle = 'Local Events App';
+            EventListComponent = (function () {
+                function EventListComponent() {
                 }
-                AppComponent = __decorate([
+                EventListComponent = __decorate([
                     core_1.Component({
-                        selector: 'events-app',
-                        template: "\n    <div>\n        <h1>{{pageTitle}}</h1>\n        <el-events></el-events>\n    </div>\n    ",
-                        directives: [event_list_component_1.EventListComponent]
+                        selector: 'el-events',
+                        templateUrl: 'app/events/event-list.component.html'
                     }), 
                     __metadata('design:paramtypes', [])
-                ], AppComponent);
-                return AppComponent;
+                ], EventListComponent);
+                return EventListComponent;
             }());
-            exports_1("AppComponent", AppComponent);
+            exports_1("EventListComponent", EventListComponent);
         }
     }
 });
 
-//# sourceMappingURL=app.component.js.map
+//# sourceMappingURL=event-list.component.js.map
