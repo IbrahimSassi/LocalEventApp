@@ -2,7 +2,7 @@ import { Component } from 'angular2/core';
 import { EventListComponent } from './events/event-list.component';
 import { EventService }	from './events/event.service';
 import { HTTP_PROVIDERS }	from 'angular2/http';
-import 'rxjs/Rx';
+import 'rxjs/Rx'; //Load All Features
 
 
 @Component({

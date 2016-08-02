@@ -33,6 +33,7 @@ System.register(['angular2/core', './events/event-list.component', './events/eve
                     this.pageTitle = 'Local Events App';
                 }
                 AppComponent = __decorate([
+                    //Load All Features
                     core_1.Component({
                         selector: 'events-app',
                         template: "\n    <div>\n        <h1>{{pageTitle}}</h1>\n        <el-events></el-events>\n    </div>\n    ",
