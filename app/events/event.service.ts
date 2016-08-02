@@ -8,7 +8,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class EventService {
     
-    private _eventUrl = "https://localeventapp-ibrahimsassi.c9users.io/data.json";
+    private _eventUrl = "https://localeventapp-ibrahimsassi.c9users.io/daata.json";
     
     constructor(private _http:Http){
         
@@ -17,7 +17,6 @@ export class EventService {
     getEvents(): Observable<IEvent[]>{
         return this._http.get(this._eventUrl)
             .map((response: Response) => <IEvent[]>response.json())
-            .do(data=> console.log("All : " + JSON.stringify(data)))
             .catch(this.handleError);
     
 }
