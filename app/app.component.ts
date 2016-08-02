@@ -3,7 +3,7 @@ import { EventListComponent } from './events/event-list.component';
 import { EventService }	from './events/event.service';
 import { HTTP_PROVIDERS }	from 'angular2/http';
 import 'rxjs/Rx'; //Load All Features
-
+import { ROUTER_PROVIDERS} from 'angular2/router';
 
 @Component({
     selector: 'events-app',
@@ -14,7 +14,9 @@ import 'rxjs/Rx'; //Load All Features
     </div>
     `,
     directives: [EventListComponent],
-    providers: [EventService,HTTP_PROVIDERS]
+    providers: [EventService,
+                HTTP_PROVIDERS,
+                ROUTER_PROVIDERS]
 })
 
 

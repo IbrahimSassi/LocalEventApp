@@ -59,14 +59,14 @@
                 "capacity": 300
                 },
                 {
-                "name": "Event 4",
+                "name": "Event 6",
 				"code": "Evt400",
                 "description": "The fourth event",
                 "date": "2016.04.04",
                 "time": "4:00 PM",
                 "duration": "4 Hours",
 				"fee": 4,
-				"rating": 4,
+				"rating": 9,
 				"imageUrl" : "https://openclipart.org/image/300px/svg_to_png/5351/addon-sandcastle-2.png",
                 "location": {
                     "streetAddr": "404 Main St.",
