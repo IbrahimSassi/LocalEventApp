@@ -5,7 +5,6 @@ import { ThumbComponent } from '../shared/thumb.component';
 import { EventService } from './event.service';
 
 @Component({
-    selector: 'el-events',
     templateUrl :'app/events/event-list.component.html',
     styleUrls: ['app/events/event-list.component.css'],
     pipes: [EventFilterPipe],

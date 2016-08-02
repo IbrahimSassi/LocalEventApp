@@ -1,4 +1,4 @@
-System.register(['angular2/core', './events/event-list.component', './events/event.service', 'angular2/http', 'rxjs/Rx', 'angular2/router'], function(exports_1, context_1) {
+System.register(['angular2/core', './events/event-list.component', './events/event.service', 'angular2/http', 'rxjs/Rx', 'angular2/router', './home/welcome.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './events/event-list.component', './events/eve
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, event_list_component_1, event_service_1, http_1, router_1;
+    var core_1, event_list_component_1, event_service_1, http_1, router_1, welcome_component_1;
     var AppComponent;
     return {
         setters:[
@@ -29,6 +29,9 @@ System.register(['angular2/core', './events/event-list.component', './events/eve
             function (_1) {},
             function (router_1_1) {
                 router_1 = router_1_1;
+            },
+            function (welcome_component_1_1) {
+                welcome_component_1 = welcome_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -38,12 +41,25 @@ System.register(['angular2/core', './events/event-list.component', './events/eve
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'events-app',
-                        template: "\n    <div>\n        <h1>{{pageTitle}}</h1>\n        <el-events></el-events>\n    </div>\n    ",
-                        directives: [event_list_component_1.EventListComponent],
+                        template: "\n    <div>\n\t    <nav class='navbar navbar-default'>\n\t\t    <div class='container-fluid'>\n\t\t\t    <a class='navbar-brand'>{{pageTitle}}</a>\n\t\t\t    <ul class='nav navbar-nav'>\n\t\t\t\t    <li><a [routerLink]=\"['Welcome']\">Home</a></li>\n\t\t\t\t    <li><a [routerLink]=\"['Events']\">Event List</a></li>\n\t\t\t    </ul>\n\t\t    </div>\n\t    </nav>\n    </div>\n    ",
+                        directives: [router_1.ROUTER_DIRECTIVES],
                         providers: [event_service_1.EventService,
                             http_1.HTTP_PROVIDERS,
                             router_1.ROUTER_PROVIDERS]
-                    }), 
+                    }),
+                    router_1.RouteConfig([
+                        {
+                            path: '/welcome',
+                            name: 'Welcome',
+                            component: welcome_component_1.WelcomeComponent,
+                            useAsDefault: true
+                        },
+                        {
+                            path: '/events',
+                            name: 'Events',
+                            component: event_list_component_1.EventListComponent
+                        }
+                    ]), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
                 return AppComponent;
