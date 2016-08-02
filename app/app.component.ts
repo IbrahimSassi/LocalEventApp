@@ -21,6 +21,10 @@ import { EventDetailComponent } from './events/event-detail.component';
 			    </ul>
 		    </div>
 	    </nav>
+	    <div class='container'>
+			<router-outlet></router-outlet>
+		</div>
+
     </div>
     `,
     directives: [ROUTER_DIRECTIVES],
@@ -43,6 +47,11 @@ import { EventDetailComponent } from './events/event-detail.component';
             path:'/events',
             name:'Events',
             component :EventListComponent
+        },
+        {
+            path:'/event/:id',
+            name:'EventDetail',
+            component :EventDetailComponent
         }
     ])
 
