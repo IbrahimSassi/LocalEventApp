@@ -1,7 +1,7 @@
-import { Injectable } from 'angular2/core';
+import { Injectable  } from 'angular2/core';
 import { IEvent } from './event';
 
-@Injectable
+@Injectable()
 export class EventService {
     
     getEvents(): IEvent[]{
