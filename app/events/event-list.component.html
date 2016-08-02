@@ -53,7 +53,9 @@
                     <td>{{ event.code | lowercase }}</td>
                     <td>{{ event.date }}</td>
                     <td>{{ event.fee | currency:'USD':true:'1.2-2'}}</td>
-                    <td>{{ event.rating }}</td>
+                    <td>
+                        <acw-thumb [rating]='event.rating'></acw-thumb>
+                    </td>
                     
                 </tr>
                 

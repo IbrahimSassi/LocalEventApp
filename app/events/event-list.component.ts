@@ -1,12 +1,14 @@
 import { Component,OnInit } from 'angular2/core';
 import { IEvent } from './events';
 import { EventFilterPipe } from './event-filter.pipe';
+import { ThumbComponent } from '../shared/thumb.component';
 
 @Component({
     selector: 'el-events',
     templateUrl :'app/events/event-list.component.html',
     styleUrls: ['app/events/event-list.component.css'],
-    pipes: [EventFilterPipe]
+    pipes: [EventFilterPipe],
+    directives:[ThumbComponent]
 })
 
 
@@ -17,7 +19,7 @@ export class EventListComponent implements OnInit{
     pageTitle: string = " ** Event List ** ";
     imageWidth: number = 100;
     imageMargin: number = 2;
-    searchCriteria: string= 'beach';
+    searchCriteria: string= 'Event';
     
     
     events: any[] = [  {
@@ -107,9 +109,9 @@ export class EventListComponent implements OnInit{
         this.eventsImg = !this.eventsImg;
     }
     
-    ngOnInit(): void{
-        alert('In OnInit');
-    }
+    // ngOnInit(): void{
+    //     console.log('In OnInit');
+    // }
 
 
     
