@@ -1,5 +1,5 @@
-import { Component,OnInit } from 'angular2/core';
-import { IEvent } from './events';
+import { Component, OnInit } from 'angular2/core';
+import { IEvent } from './event';
 import { EventFilterPipe } from './event-filter.pipe';
 import { ThumbComponent } from '../shared/thumb.component';
 
@@ -112,6 +112,10 @@ export class EventListComponent implements OnInit{
     // ngOnInit(): void{
     //     console.log('In OnInit');
     // }
+    
+    onRatingClicked(message: string): void{
+        this.pageTitle = 'Event List ' + message ;
+    }
 
 
     

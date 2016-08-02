@@ -1,19 +1,24 @@
-import { Component, OnChanges, Input, Output, EventEmitter } from 'angular2/core'
+import { Component, OnChanges, Input,
+    Output, EventEmitter } from 'angular2/core';
 
 @Component({
     selector: 'acw-thumb',
-    templateUrl: 'app/shared/thumbs.component.html',
-    stylesUrls: ['app/shared/thumbs.component.css']
+    templateUrl: 'app/shared/thumb.component.html',
+    styleUrls: ['app/shared/thumb.component.css']
 })
 
 export class ThumbComponent {
     @Input() rating: number;
-    thumbsWidth: number;
-    @Output() ratingClicked: EventEmitter<string>
+    thumbWidth: number;
+    @Output() ratingClicked: EventEmitter<string> =
         new EventEmitter<string>();
     
-    ngOnChanges(): void{
-        this.thumbsWidth = this.rating *86 /5;
-    }
+    ngOnChanges(): void {
+		this.thumbWidth = this.rating * 86 / 5;
+	}
+	
+	onClick() {
+	    this.ratingClicked.emit(`The rating ${this.rating} was clicked.`);
     
+}
 }

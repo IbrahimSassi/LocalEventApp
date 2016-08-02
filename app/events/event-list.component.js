@@ -116,6 +116,12 @@ System.register(['angular2/core', './event-filter.pipe', '../shared/thumb.compon
                 EventListComponent.prototype.toogleImages = function () {
                     this.eventsImg = !this.eventsImg;
                 };
+                // ngOnInit(): void{
+                //     console.log('In OnInit');
+                // }
+                EventListComponent.prototype.onRatingClicked = function (message) {
+                    this.pageTitle = 'Event List ' + message;
+                };
                 EventListComponent = __decorate([
                     core_1.Component({
                         selector: 'el-events',

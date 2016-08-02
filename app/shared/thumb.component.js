@@ -20,7 +20,14 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             ThumbComponent = (function () {
                 function ThumbComponent() {
+                    this.ratingClicked = new core_1.EventEmitter();
                 }
+                ThumbComponent.prototype.ngOnChanges = function () {
+                    this.thumbWidth = this.rating * 86 / 5;
+                };
+                ThumbComponent.prototype.onClick = function () {
+                    this.ratingClicked.emit("The rating " + this.rating + " was clicked.");
+                };
                 __decorate([
                     core_1.Input(), 
                     __metadata('design:type', Number)
@@ -32,19 +39,14 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 ThumbComponent = __decorate([
                     core_1.Component({
                         selector: 'acw-thumb',
-                        templateUrl: 'app/shared/thumbs.component.html',
-                        stylesUrls: ['app/shared/thumbs.component.css']
+                        templateUrl: 'app/shared/thumb.component.html',
+                        styleUrls: ['app/shared/thumb.component.css']
                     }), 
                     __metadata('design:paramtypes', [])
                 ], ThumbComponent);
                 return ThumbComponent;
             }());
             exports_1("ThumbComponent", ThumbComponent);
-            new core_1.EventEmitter();
-            ngOnChanges();
-            void {
-                this: .thumbsWidth = this.rating * 86 / 5
-            };
         }
     }
 });

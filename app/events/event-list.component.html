@@ -54,7 +54,9 @@
                     <td>{{ event.date }}</td>
                     <td>{{ event.fee | currency:'USD':true:'1.2-2'}}</td>
                     <td>
-                        <acw-thumb [rating]='event.rating'></acw-thumb>
+                        <acw-thumb [rating]='event.rating'
+                            (ratingClicked)='onRatingClicked($event)'>
+                        </acw-thumb>
                     </td>
                     
                 </tr>
